@@ -12,7 +12,7 @@ class Display:
         self.font = pygame.font.Font(None, 36)
         self.x = 0
         self.y = HEIGHT
-        self.image = pygame.image.load('assets/pacman/pacman-2.png')
+        self.image = pygame.image.load('pacman-2.png')
         self.image = pygame.transform.scale(self.image, (self.size, self.size))
 
     def show_life(self, life, screen):
