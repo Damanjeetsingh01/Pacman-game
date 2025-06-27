@@ -12,10 +12,10 @@ class Pacman(pygame.sprite.Sprite):
         self.life = life
 
         self.frames = [
-            pygame.image.load("assets/pacman/pacman-1.png"),
-            pygame.image.load("assets/pacman/pacman-2.png"),
-            pygame.image.load("assets/pacman/pacman-3.png"),
-            pygame.image.load("assets/pacman/pacman-4.png"),
+            pygame.image.load("pacman-1.png"),
+            pygame.image.load("pacman-2.png"),
+            pygame.image.load("pacman-3.png"),
+            pygame.image.load("pacman-4.png"),
         ]
         self.frames = [
             pygame.transform.scale(frame, (self.size, self.size))
