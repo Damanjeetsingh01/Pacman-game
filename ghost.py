@@ -15,7 +15,7 @@ class Ghost(pygame.sprite.Sprite):
         self.speed = GHOST_SPEED
 
         self.move_dir = 'up'
-        self.img_path = f'assets/{self.ghost_name}/{self.move_dir}.png'
+        self.img_path = f'{self.ghost_name}/{self.move_dir}.png'
 
         self.image = pygame.image.load(self.img_path)
         self.image = pygame.transform.scale(self.image, (self.size, self.size))
@@ -43,9 +43,9 @@ class Ghost(pygame.sprite.Sprite):
 
     def animate(self, power_mode):
         if power_mode:
-            self.img_path = 'assets/edible/ghost.png'
+            self.img_path = 'ghost.png'
         else:
-            self.img_path = f'assets/{self.ghost_name}/{self.move_dir}.png'
+            self.img_path = f'{self.ghost_name}/{self.move_dir}.png'
 
         self.image = pygame.image.load(self.img_path)
         self.image = pygame.transform.scale(self.image, (self.size, self.size))
