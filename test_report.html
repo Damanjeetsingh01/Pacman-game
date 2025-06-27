@@ -797,13 +797,13 @@ module.exports = {
 
 },{"./datamanager.js":1,"./dom.js":2,"./filter.js":3,"./sort.js":7,"./storage.js":8}],6:[function(require,module,exports){
 class MediaViewer {
-    constructor(assets) {
-        this.assets = assets
+    constructor(main) {
+        this.main = main
         this.index = 0
     }
 
     nextActive() {
-        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+        this.index = this.index === this.main.length - 1 ? 0 : this.index + 1
         return [this.activeFile, this.index]
     }
 
@@ -817,13 +817,13 @@ class MediaViewer {
     }
 
     get activeFile() {
-        return this.assets[this.index]
+        return this.main[this.index]
     }
 }
 
 
-const setup = (resultBody, assets) => {
-    if (!assets.length) {
+const setup = (resultBody, main) => {
+    if (!main.length) {
         resultBody.querySelector('.media').classList.add('hidden')
         return
     }
@@ -852,7 +852,7 @@ const setup = (resultBody, assets) => {
         }
 
         mediaName.innerText = media?.name
-        counter.innerText = `${index + 1} / ${assets.length}`
+        counter.innerText = `${index + 1} / ${main.length}`
     }
     setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
 
