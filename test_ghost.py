@@ -48,7 +48,7 @@ def test_animate_power_mode(ghost, monkeypatch):
 
     monkeypatch.setattr(pygame.image, 'load', fake_load)
     ghost.animate(power_mode=True)
-    assert 'assets/edible/ghost.png' in called[0]
+    assert 'ghost.png' in called[0]
 
 
 def test_animate_normal_mode(ghost, monkeypatch):
@@ -60,4 +60,4 @@ def test_animate_normal_mode(ghost, monkeypatch):
 
     monkeypatch.setattr(pygame.image, 'load', fake_load)
     ghost.animate(power_mode=False)
-    assert f'assets/{ghost.ghost_name}/{ghost.move_dir}.png' in called[0]
+    assert f'{ghost.ghost_name}/{ghost.move_dir}.png' in called[0]
